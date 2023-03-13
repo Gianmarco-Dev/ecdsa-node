@@ -27,25 +27,24 @@ function Transfer({ address, setBalance }) {
   return (
     <form className="container transfer" onSubmit={transfer}>
       <h1>Send Transaction</h1>
-
       <label>
-        Send Amount
+        <h4>Send Amount</h4>
+        <br></br>
         <input
           placeholder="1, 2, 3..."
           value={sendAmount}
           onChange={setValue(setSendAmount)}
         ></input>
       </label>
-
       <label>
-        Recipient
+        <h4>Recipient</h4>
+        <br></br>
         <input
           placeholder="Type an address, for example: 0x2"
           value={recipient}
           onChange={setValue(setRecipient)}
         ></input>
       </label>
-
       <input type="submit" className="button" value="Transfer" />
     </form>
   );

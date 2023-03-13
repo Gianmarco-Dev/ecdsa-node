@@ -17,13 +17,18 @@ function Wallet({ address, setAddress, balance, setBalance }) {
   return (
     <div className="container wallet">
       <h1>Your Wallet</h1>
-
       <label>
-        Wallet Address
-        <input placeholder="Type an address, for example: 0x1" value={address} onChange={onChange}></input>
+        <h4>Wallet Address</h4>
+        <br></br>
+        <input
+          placeholder="Type an address, for example: 0x1"
+          value={address}
+          onChange={onChange}
+        ></input>
       </label>
+      <label>Balance:</label>
 
-      <div className="balance">Balance: {balance}</div>
+      <h1 className=""> {balance}</h1>
     </div>
   );
 }
