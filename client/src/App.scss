@@ -1,38 +1,100 @@
+// Variabili di colore
+$primary-color: #000000;
+$secondary-color: #e2e8f0;
+$accent-color: #4c24ff;
+$light-gray: #f4f6f8;
+$dark-gray: #cbd5e0;
+
+// Stile globale del documento
+html,
 body {
-  font-family: "Muli", sans-serif;
-  font-weight: 300;
-  background-color: #e2e8f0;
-  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: $primary-color;
 }
 
-label {
+// Stile del wrapper principale
+.app {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  letter-spacing: 0.05rem;
-  font-size: .8em;
-  font-weight: 400;
-  color: #222;
+
+  color: $secondary-color;
+  border: 0.5px;
+  border-color: white;
+
+  // Stile del contenitore di Wallet e Transfer
+  > * {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    
+
+  }
 }
 
-.app {
+// Stile del componente Wallet
+.wallet {
   display: flex;
-  max-width: 1400px;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0 auto;
-}
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
 
-.container {
-  flex-grow: 1;
-  margin: 0 20px;
-  background-color: #fff;
-  border: 1px solid #cbd5e0;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border-radius: 0.375rem;
-  padding: 40px;
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    text-align: center;
+  }
 
   label {
-    margin: 10px 0;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  input {
+    margin-bottom: 10px;
+    width: 500px;
+  }
+
+  .balance {
+    margin-top: 10px;
+    padding: 0.75rem;
+    background-color: $light-gray;
+  }
+}
+
+// Stile del componente Transfer
+.transfer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    margin-bottom: 10px;
   }
 
   .button {
@@ -40,47 +102,47 @@ label {
   }
 }
 
-input {
-  padding: 10px 0;
-  border-radius: 0.125rem;
-  border: 1px solid rgb(226, 232, 240);
-  background-color: #fdfdfe;
-  padding-inline-start: 0.75rem;
-  font-size: 0.875rem;
-}
-
+// Stile del bottone
 .button {
-  background-color: #319795;
-  border-radius: 0.125rem;
+  width: auto;
+  background-color: $accent-color;
+  border-radius: 0.25rem;
+  border-color: $accent-color;
   padding: 10px 20px;
   color: white;
   display: inline-flex;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
-  font-size: .9em;
+  font-size: 0.9em;
+
   &:hover {
     cursor: pointer;
   }
 }
 
-.wallet {
-  display: flex;
-  flex-direction: column;
-
-  .balance {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    font-size: .9em;
-    display: inline-flex;
-    margin-top: 10px;
-    padding: 0.75rem;
-    background-color: #f4f6f8;
-  }
+// Stile delle etichette dei campi di input
+label {
+  letter-spacing: 0.05rem;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: $secondary-color;
 }
 
-.transfer {
-  display: flex;
-  flex-direction: column;
+// Stile dei campi di input
+input {
+  width: 500px;
+  padding: 10px 0;
+  border-radius: 0.125rem;
+  border: 1px solid $dark-gray;
+  background-color: $light-gray;
+  padding-inline-start: 0.75rem;
+  font-size: 0.875rem;
+  color: $primary-color;
+}
+
+@media screen and (max-width: 768px) {
+  input {
+    max-width: 300px;
+  }
 }
